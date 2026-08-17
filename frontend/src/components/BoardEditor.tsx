@@ -9,6 +9,7 @@ import {
   ShieldAlert,
   Edit2,
   Check,
+  Loader2,
 } from 'lucide-react';
 import { Board, Coord, Net } from '../types/router';
 import { GridCanvas } from './GridCanvas';
