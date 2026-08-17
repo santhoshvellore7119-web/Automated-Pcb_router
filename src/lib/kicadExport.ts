@@ -5,7 +5,7 @@ import { Board, RoutingRunReport } from '../types/router';
  */
 export function generateKiCadPcb(board: Board, report: RoutingRunReport): string {
   const timestamp = new Date().toISOString();
-  let kicadStr = `(kicad_pcb (version 20211014) (generator "AI Studio Automated PCB Trace Router")\n`;
+  let kicadStr = `(kicad_pcb (version 20211014) (generator "Automated PCB Trace Router")\n`;
   kicadStr += `  (general\n    (thickness 1.6)\n  )\n`;
   kicadStr += `  (paper "A4")\n`;
   kicadStr += `  (layers\n`;
