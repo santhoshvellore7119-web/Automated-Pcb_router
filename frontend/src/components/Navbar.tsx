@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           lastCheck: Date.now()
         });
       } catch (error) {
-        setHealthState({ ok: false, lastCheck: Date.now() });
+        setHealthStatus({ ok: false, lastCheck: Date.now() });
       } finally {
         setIsCheckingHealth(false);
       }
