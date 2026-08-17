@@ -44,11 +44,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   }>({ ok: false, lastCheck: 0 });
   const [isCheckingHealth, setIsCheckingHealth] = useState(false);
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
   useEffect(() => {
     const checkHealth = async () => {
       setIsCheckingHealth(true);
       try {
-        const res = await fetch('/api/v1/health');
+        const res = await fetch(`${API_BASE_URL}/api/v1/health`);
         const data = await res.json();
         setHealthStatus({
           ok: data.status === 'ok',

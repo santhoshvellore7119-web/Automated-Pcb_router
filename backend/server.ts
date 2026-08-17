@@ -5,14 +5,14 @@ import {
   ALL_PRESETS,
   createForcedCongestionBoard,
   generateRandomBoard,
-} from './src/lib/presetBoards';
+} from '../frontend/src/lib/presetBoards';
 import {
   compareAllAlgorithms,
   runAStarOnBoard,
   runLeeOnBoard,
   runRipUpOnBoard,
-} from './src/lib/routerFacade';
-import { Board } from './src/types/router';
+} from '../frontend/src/lib/routerFacade';
+import { Board } from '../frontend/src/types/router';
 
 async function startServer() {
   const app = express();
@@ -122,10 +122,11 @@ async function startServer() {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
+      root: '../frontend',
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
+    const distPath = path.join(process.cwd(), '../frontend/dist');
     app.use(express.static(distPath));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));

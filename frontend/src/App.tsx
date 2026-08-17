@@ -29,12 +29,14 @@ export default function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState<boolean>(false);
   const [isKiCadModalOpen, setIsKiCadModalOpen] = useState<boolean>(false);
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
   // Run single algorithm against REST API (with client fallback)
   const handleRunAlgorithm = async (
     algo: 'lee' | 'astar' | 'ripup'
   ): Promise<RoutingRunReport> => {
     try {
-      const res = await fetch(`/api/v1/boards/${currentBoard.id}/route/${algo}`, {
+      const res = await fetch(`${API_BASE_URL}/api/v1/boards/${currentBoard.id}/route/${algo}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(currentBoard),
@@ -62,7 +64,7 @@ export default function App() {
   const handleRunComparison = async () => {
     setIsComparing(true);
     try {
-      const res = await fetch(`/api/v1/boards/${currentBoard.id}/compare`, {
+      const res = await fetch(`${API_BASE_URL}/api/v1/boards/${currentBoard.id}/compare`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(currentBoard),

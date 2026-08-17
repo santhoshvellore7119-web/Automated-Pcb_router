@@ -10,10 +10,17 @@ A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Rer
 
 - **Routing Algorithms**: Lee's (BFS), A* Search (with Manhattan heuristic), Rip-up & Reroute
 - **Design Rule Check (DRC)**: Validates routed boards against manufacturing constraints
-- **Interactive Visualization**: Real-timewavefront animation playback with speed controls
+- **Interactive Visualization**: Real-time wavefront animation playback with speed controls
 - **Multi-layer PCB Support**: Via hopping between copper layers
 - **Performance Benchmarking**: Compare algorithm execution time, wirelength, and via count
 - **Enhanced UI/UX**: Loading states, confirmation dialogs, and responsive design
+
+## Project Structure
+
+- `frontend/` - Frontend React/Vite application
+- `backend/` - Backend Express server with REST API
+- `frontend/src/lib/` - Core logic: algorithms, DRC validation, utilities
+- `frontend/src/components/` - Reusable UI components
 
 ## Run Locally
 
@@ -23,7 +30,7 @@ A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Rer
    ```bash
    npm install
    ```
-2. Start the development server:
+2. Start the development server (runs both frontend and backend):
    ```bash
    npm run dev
    ```
@@ -43,19 +50,28 @@ The backend provides REST API endpoints for board routing:
 - `POST /api/v1/generate/random` - Generate a random test board
 - `POST /api/v1/generate/congestion` - Generate a forced-congestion test board
 
-## Project Structure
-
-- `src/` - Frontend React/Vite application
-- `server.ts` - Backend Express server with REST API
-- `src/lib/` - Core logic: algorithms, DRC validation, utilities
-- `src/components/` - Reusable UI components
-
 ## Build for Production
 
 ```bash
 npm run build
 ```
-The built assets will be in the `dist/` directory and served by the backend when `NODE_ENV=production`.
+This will:
+1. Build the frontend assets to `frontend/dist/`
+2. Bundle the backend server to `dist/server.cjs`
+
+To run the production build:
+```bash
+npm start
+```
+The built assets will be served by the backend when `NODE_ENV=production`.
+
+## Environment Variables
+
+You can configure the API base URL for the frontend by creating a `.env` file in the frontend directory:
+
+```
+VITE_API_BASE_URL=http://localhost:3000
+```
 
 ## License
 
