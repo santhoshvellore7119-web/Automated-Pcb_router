@@ -67,7 +67,7 @@ describe('Routing Algorithms', () => {
       expect(result.path.length).toBe(7);
     });
 
-    test('should be more efficient than Lee\\'s in open space', () => {
+    test("should be more efficient than Lee's in open space", () => {
       const source: Coord = { layer: 0, row: 0, col: 0 };
       const target: Coord = { layer: 0, row: 5, col: 5 };
 
@@ -104,12 +104,12 @@ describe('Routing Algorithms', () => {
       expect(astarResult.status).toBe('ROUTED');
       // Both should find path through the gap
       expect(leeResult.wirelength).toBe(astarResult.wirelength);
-      expect(astarResult.wirelength).toBe(4); // Need to go around: down, right 4 times, up
+      expect(astarResult.wirelength).toBe(6); // Need to go around: down, right 4 times, up
     });
   });
 
   describe("Algorithm Comparison", () => {
-    test('A* should never explore more cells than Lee\\'s in same conditions', () => {
+    test("A* should never explore more cells than Lee's in same conditions", () => {
       const testCases: Array<{source: Coord; target: Coord; obstacles?: Set<string>}> = [
         { source: {layer: 0, row: 0, col: 0}, target: {layer: 0, row: 5, col: 5} },
         { source: {layer: 0, row: 2, col: 2}, target: {layer: 0, row: 7, col: 7} },
