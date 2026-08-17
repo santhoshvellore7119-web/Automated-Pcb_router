@@ -24,7 +24,7 @@ export function createCornerToCornerBoard(): Board {
 export function createOffCornerSpeedupBoard(): Board {
   return {
     id: 'preset-off-corner',
-    name: '2. Off-Corner A* Speedup Benchmark (3x Cell Reduction)',
+    name: '2. Off-Corner A* Speedup Benchmark',
     rows: 30,
     cols: 30,
     layers: 1,
