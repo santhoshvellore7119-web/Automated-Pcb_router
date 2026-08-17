@@ -1,0 +1,1 @@
+{"name":"Automated PCB Trace Router","description":"A grid-based PCB autorouter using Lee\u0027s Algorithm, A* Search, and Rip-Up-and-Reroute conflict resolution with interactive visualization and performance metrics.","requestFramePermissions":[],"majorCapabilities":["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]}
