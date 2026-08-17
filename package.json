@@ -1,0 +1,37 @@
+{
+  "name": "automated-pcb-trace-router",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Reroute conflict resolution with interactive visualization and Design Rule Check (DRC).",
+  "scripts": {
+    "dev": "concurrently \"tsx backend/server.ts\" \"vite --config frontend/vite.config.ts\"",
+    "build": "vite build --config frontend/vite.config.ts && esbuild backend/server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "preview": "vite preview --config frontend/vite.config.ts",
+    "clean": "rm -rf dist frontend/dist server.js",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^8.2.2",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "recharts": "^3.10.1",
+    "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3",
+    "@types/express": "^4.17.21"
+  }
+}
