@@ -1,10 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="PCB Router Banner" src="https://via.placeholder.com/1200x475/000000/FFFFFF?text=Automated+PCB+Trace+Router" />
-</div>
-
 # Automated PCB Trace Router
 
 A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Reroute conflict resolution with interactive visualization, Design Rule Check (DRC), and performance metrics.
+
+## Project Structure
+
+```
+.
+├── backend/                  # Express server with routing algorithms
+│   ├── .env                  # Environment variables
+│   └── server.ts             # Main server entry point
+├── frontend/                 # React/Vite frontend application
+│   ├── index.html            # HTML template
+│   ├── package.json          # Frontend dependencies and scripts
+│   ├── public/               # Static assets
+│   ├── src/                  # Source code
+│   │   ├── components/       # React components
+│   │   ├── lib/              # Routing algorithms and board utilities
+│   │   ├── stores/           # Zustand state management
+│   │   ├── App.jsx           # Main application component
+│   │   ├── main.jsx          # Entry point
+│   │   ├── index.css         # Global styles (Tailwind)
+│   │   └── vite.config.ts    # Vite configuration
+├── dist/                     # Production build output
+├── node_modules/             # Project dependencies
+├── package.json              # Root dependencies and scripts
+├── vitest.config.ts          # Vitest configuration
+├── vitest.setup.ts           # Vitest setup
+├── tsconfig.json             # TypeScript configuration
+└── .gitignore                # Git ignore rules
+```
 
 ## Features
 
@@ -14,34 +38,6 @@ A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Rer
 - **Multi-layer PCB Support**: Via hopping between copper layers
 - **Performance Benchmarking**: Compare algorithm execution time, wirelength, and via count
 - **Enhanced UI/UX**: Loading states, confirmation dialogs, and responsive design
-
-## Project Structure
-
-```
-.
-├── backend/
-│   ├── app/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── services/
-│   ├── migrations/
-│   └── var/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── lib/
-│   │   └── stores/
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
-├── README.md
-├── package.json
-├── vitest.config.ts
-├── vitest.setup.ts
-├── tsconfig.json
-└── .gitignore
-```
 
 ## Run Locally
 
@@ -55,7 +51,9 @@ A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Rer
    ```bash
    npm run dev
    ```
-3. Open your browser to `http://localhost:5173` (or the URL shown in terminal)
+   - Backend server starts on `http://localhost:3000`
+   - Frontend Vite dev server starts on `http://localhost:5173`
+   - Open your browser to the frontend URL shown in the terminal.
 
 ## API Endpoints
 
