@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 
-const useSocket = () => {
+export const useSocket = () => {
   const [socket, setSocket] = useState(null);
   const [connected, setConnected] = useState(false);
 
@@ -25,5 +25,3 @@ const useSocket = () => {
 
   return { socket, connected };
 };
-
-export default useSocket;

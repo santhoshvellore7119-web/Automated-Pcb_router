@@ -17,10 +17,31 @@ A grid-based PCB autorouter using Lee's Algorithm, A* Search, and Rip-Up-and-Rer
 
 ## Project Structure
 
-- `frontend/` - Frontend React/Vite application
-- `backend/` - Backend Express server with REST API
-- `frontend/src/lib/` - Core logic: algorithms, DRC validation, utilities
-- `frontend/src/components/` - Reusable UI components
+```
+.
+├── backend/
+│   ├── app/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── services/
+│   ├── migrations/
+│   └── var/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── lib/
+│   │   └── stores/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.ts
+├── README.md
+├── package.json
+├── vitest.config.ts
+├── vitest.setup.ts
+├── tsconfig.json
+└── .gitignore
+```
 
 ## Run Locally
 

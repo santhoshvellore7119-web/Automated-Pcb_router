@@ -1,3 +1,4 @@
+/// <reference types="vite.client" />
 import React, { useState } from 'react';
 import { Board, ComparisonReport, RoutingRunReport } from './types/router';
 import { ALL_PRESETS } from './lib/presetBoards';

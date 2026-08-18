@@ -87,7 +87,7 @@ describe('Routing Algorithms', () => {
       const source: Coord = { layer: 0, row: 0, col: 0 };
       const target: Coord = { layer: 0, row: 0, col: 4 };
       // Create a horizontal wall with one gap
-      const obstacles = new Set();
+      const obstacles = new Set<string>();
       for (let c = 1; c <= 3; c++) {
         if (c !== 2) { // Leave gap at column 2
           obstacles.add(`0,0,${c}`);
